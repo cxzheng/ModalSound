@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TetViewerFrame</class>
+ <widget class="QMainWindow" name="TetViewerFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>889</width>
+    <height>702</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tetrahedron Viewer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/images/obb.png</normaloff>:/images/obb.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="TetViewerCanvas" name="canvas" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>889</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <addaction name="actionBinaryTetFormat"/>
+     <addaction name="actionTextTetFormat"/>
+     <addaction name="actionAbaqusTetFormat"/>
+    </widget>
+    <addaction name="actionOpen"/>
+    <addaction name="menuExport"/>
+   </widget>
+   <widget class="QMenu" name="menuModal">
+    <property name="title">
+     <string>&amp;Modal</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionLoadModes"/>
+    <addaction name="actionModeShapes"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionWireframe"/>
+    <addaction name="separator"/>
+    <addaction name="actionMeshInfo"/>
+   </widget>
+   <widget class="QMenu" name="menuMesh">
+    <property name="title">
+     <string>M&amp;esh</string>
+    </property>
+    <addaction name="actionCheckUselessVertex"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuMesh"/>
+   <addaction name="menuModal"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionLoadModes"/>
+   <addaction name="actionBinaryTetFormat"/>
+   <addaction name="separator"/>
+   <addaction name="actionWireframe"/>
+   <addaction name="actionMeshInfo"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/load.png</normaloff>:/images/load.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+  </action>
+  <action name="actionModeShapes">
+   <property name="text">
+    <string>Mode Shapes</string>
+   </property>
+  </action>
+  <action name="actionLoadModes">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/load_frac.png</normaloff>:/images/load_frac.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load Modes</string>
+   </property>
+  </action>
+  <action name="actionWireframe">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/wireframe.png</normaloff>:/images/wireframe.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Wireframe</string>
+   </property>
+  </action>
+  <action name="actionBinaryTetFormat">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/binary.png</normaloff>:/images/binary.png</iconset>
+   </property>
+   <property name="text">
+    <string>Binary Tet Format (.tet)</string>
+   </property>
+  </action>
+  <action name="actionTextTetFormat">
+   <property name="text">
+    <string>Text Tet Format (.node/.ele)</string>
+   </property>
+  </action>
+  <action name="actionMeshInfo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/info.png</normaloff>:/images/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Mesh Info</string>
+   </property>
+  </action>
+  <action name="actionCheckUselessVertex">
+   <property name="text">
+    <string>Check Useless Vertex</string>
+   </property>
+  </action>
+  <action name="actionAbaqusTetFormat">
+   <property name="text">
+    <string>Abaqus Tet Format (.aba)</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TetViewerCanvas</class>
+   <extends></extends>
+   <header>tools/TetViewerCanvas.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

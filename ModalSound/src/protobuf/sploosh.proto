@@ -1,0 +1,28 @@
+package sploosh;
+
+message Vector3d {
+    optional double x = 1 [default = 0.];
+    optional double y = 2 [default = 0.];
+    optional double z = 3 [default = 0.];
+}
+
+message Complexd {
+    optional double real = 1 [default = 0.];
+    optional double imag = 2 [default = 0.];
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+message FMMoments {
+    required uint32   numExp  = 1;  // # of expansion terms
+    required double   waveNum = 2;  // wave number
+    optional Vector3d center  = 3;
+    optional string   mfile   = 4;  // what file stores the moments
+}
+
+// store the moments of an object with multiple vibrational modes
+message ModalMoments {
+    repeated FMMoments  moment = 1;
+}
+
+//////////////////////////////////////////////////////////////////////////////////

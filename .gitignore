@@ -1,0 +1,4 @@
+icc-build
+gcc-build
+*.swp
+*.swo
