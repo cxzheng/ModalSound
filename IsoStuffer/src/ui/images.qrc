@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>images/fracture.png</file>
+    <file>images/load.png</file>
+    <file>images/next.png</file>
+    <file>images/play.png</file>
+    <file>images/grid.png</file>
+    <file>images/load_frac.png</file>
+    <file>images/obb.png</file>
+  </qresource>
+</RCC>

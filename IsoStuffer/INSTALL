@@ -1,0 +1,51 @@
+Building IsoStuffer
+---------------------------------------
+
+This tool is built using CMake. Building has been tested on both Linux and Mac OSX. 
+Both Gnu C++ compiler (g++) and Intel C++ compiler (icpc) have been tested for 
+compiling the source code. 
+
+Requirements
+============
+
+The following libraries are required
+  
+    * CMake (v2.4+)
+    * Boost (v1.33+)
+    * libQGLViewer (v2.3.8+)
+    * QT4 (v5.0+)
+
+Building
+============
+1. Create a new directory to ensure noting affected in the source directory
+
+   mkdir gcc-build
+   cd gcc-build
+
+2. Configure the compile using CMake
+   
+   cmake .. 
+   or
+   ccmake ..
+   or 
+   cmake-gui ..
+
+   For better performance, enabling OpenMP is suggested. OpenMP support can be turned on
+   using USE_OPENMP option, i.e.
+   
+   cmake -DUSE_OPENMP=ON ..
+    
+   NOTE: If you install libQGLViewer in local dir, say $HOME/local, you can specify its 
+   location by
+   cmake -DQGLVIEWER_ROOT=$HOME/local ..
+
+3. Compile the code
+
+   make 
+
+4. After compiling the code successfully, executables are in gcc-build/src directory.
+
+Building with QT4
+=================
+If you want to compile with QT4, you can copy the cmake/CMakeLists-qt4.txt to the base directory 
+and replace CMakeLists.txt. After that, you can launch the cmake to compile.
