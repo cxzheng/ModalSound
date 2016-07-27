@@ -15,10 +15,6 @@ if ( BUILD_TOOLS )
     add_subdirectory(tools)
 endif ( BUILD_TOOLS )
 
-if ( BUILD_TEST )
-    add_subdirectory(tests)
-endif ( BUILD_TEST )
-
 if ( BUILD_PYTHON )
     add_subdirectory(libpython)
 endif ( BUILD_PYTHON )

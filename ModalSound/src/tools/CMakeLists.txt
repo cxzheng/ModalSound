@@ -38,15 +38,9 @@ target_link_libraries(tetviewer
     ${OPENGL_LIBRARIES}
     Qt5::Core   Qt5::Widgets
     Qt5::Xml    Qt5::OpenGL
-    )
+)
 
 set_target_properties(tetviewer 
-    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
-
-# -----------------------------------------------------------------------------
-add_executable(check_tgl_mesh
-    check_tgl_mesh.cpp)
-set_target_properties(check_tgl_mesh 
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 
 # -----------------------------------------------------------------------------
@@ -58,13 +52,4 @@ add_executable(extmat
 target_link_libraries(extmat
     ${MKL_LIBS} ${CMAKE_THREAD_LIBS_INIT})
 set_target_properties(extmat 
-    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
-
-# -----------------------------------------------------------------------------
-add_executable(obbviewer
-    OBBViewer.cpp       ../sc/eig3.cpp)
-target_link_libraries(obbviewer
-    ${QT_LIBRARIES}             ${QGLVIEWER_LIBRARY}
-    ${GLUT_LIBRARIES}           ${OPENGL_LIBRARIES})
-set_target_properties(obbviewer 
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
