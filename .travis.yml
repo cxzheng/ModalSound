@@ -1,0 +1,65 @@
+language: cpp
+sudo: required
+
+matrix:
+  include:
+    # Linux and GCC
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          sources:
+            - george-edison55-precise-backports
+          packages:
+            - cmake-data
+            - cmake
+            - git
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-6
+            - g++-6
+      env:
+        - CC_COMPILER=gcc-6
+        - CXX_COMPILER=g++-6
+      script:
+        - cmake --version
+        - git submodule init
+        - git submodule update
+        - cd IsoStuffer
+        - mkdir build
+        - cd build
+        - CC=$CC_COMPILER CXX=$CXX_COMPILER cmake ..
+        - make -j 2
+        - cd ../../ModalSound/
+        - mkdir build
+        - cd build
+        - CC=$CC_COMPILER CXX=$CXX_COMPILER cmake ..
+        - make -j 2
+      #  - $CTEST_EXEC -j 2 --output-on-failure
+      #     - os: osx
+      #       compiler: clang
+      #       script:
+      #         - cmake --version
+      #         - git submodule init
+      #         - git submodule update
+      #         - mkdir build
+      #         - cd build
+      #         - cmake ..
+      #         - make -j 2
+
+before_install:
+  # Workaround for weird Python binary in the latest Travis CI update
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=/usr/bin/:$PATH ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y git libboost-all-dev libeigen3-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qt5-default libqglviewer-dev  mesa-utils  libxmu-dev libxi-dev libconfig++-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew outdated cmake || brew upgrade cmake ; fi
+  # only for debuging
+  # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install cmake vim git; fi
+  # it appears that boost has been installed, with at least version 1.61, so
+  # a pretty new version.
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install eigen glog gflags libconfig; fi
+    

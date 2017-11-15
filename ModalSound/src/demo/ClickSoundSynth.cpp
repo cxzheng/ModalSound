@@ -173,7 +173,7 @@ void ClickSoundViewer::keyPressEvent(QKeyEvent* e)
     if ( e->key() == Qt::Key_W && modifiers == Qt::NoButton )
     {
         wireframe_ = !wireframe_;
-        updateGL();
+        update();
     }
     else
         QGLViewer::keyPressEvent(e);
@@ -214,7 +214,7 @@ void ClickSoundViewer::postSelection(const QPoint&)
         audio_->play( mesh_.triangle_ids(selTriId_), nml, camPos );
     }
     
-    if ( selTriId_ >= 0 ) updateGL();
+    if ( selTriId_ >= 0 ) update();
 }
 
 void ClickSoundViewer::init_gl()
