@@ -57,11 +57,15 @@ find_package(Boost 1.50 REQUIRED
 find_package(GSL REQUIRED)
 
 # Eigen
-find_package(Eigen REQUIRED)
+#find_package(Eigen REQUIRED)
 
 if (EIGEN_FOUND)
   message("-- Found Eigen version ${EIGEN_VERSION}: ${Eigen_INCLUDE_DIR}")
 endif (EIGEN_FOUND)
+
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/include/eigen
+)
 
 include(sploosh_external)
 
