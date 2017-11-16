@@ -56,19 +56,6 @@ find_package(Boost 1.50 REQUIRED
 # GSL
 find_package(GSL REQUIRED)
 
-# Eigen
-find_package(Eigen REQUIRED)
-
-if (EIGEN_FOUND)
-  if (EIGEN_VERSION VERSION_LESS 3.1.0)
-    message(FATAL_ERROR "-- Ceres requires Eigen version >= 3.1.0 in order "
-      "that Eigen/SparseCore be available, detected version of Eigen is: "
-      "${EIGEN_VERSION}")
-  endif (EIGEN_VERSION VERSION_LESS 3.1.0)
-
-  message("-- Found Eigen version ${EIGEN_VERSION}: ${EIGEN_INCLUDE_DIRS}")
-endif (EIGEN_FOUND)
-
 include(sploosh_external)
 
 #===================================================================
