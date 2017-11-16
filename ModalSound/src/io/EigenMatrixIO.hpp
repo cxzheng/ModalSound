@@ -1,11 +1,11 @@
 #ifndef EIGEN_MATRIX_IO_INC
 #   define EIGEN_MATRIX_IO_INC
 
-//#ifdef MKL_DOMAIN_BLAS
-//#define EIGEN_MKL_DOMAIN_BLAS MKL_DOMAIN_BLAS
-//#else
-//#define EIGEN_MKL_DOMAIN_BLAS MKL_BLAS
-//#endif
+#ifdef MKL_DOMAIN_BLAS
+#define EIGEN_MKL_DOMAIN_BLAS MKL_DOMAIN_BLAS
+#else
+#define EIGEN_MKL_DOMAIN_BLAS MKL_BLAS
+#endif
 
 #include <stdio.h>
 #include <stdint.h>
