@@ -6,6 +6,7 @@
 #else
 #define EIGEN_MKL_DOMAIN_BLAS MKL_BLAS
 #endif
+#define EIGEN_MKL_DOMAIN_BLAS MKL_BLAS
 
 #include <stdio.h>
 #include <stdint.h>
