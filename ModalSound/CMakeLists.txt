@@ -44,7 +44,8 @@ find_package(Threads 1.0 REQUIRED)
 
 # check Intel MKL
 find_package(MKL REQUIRED)
-set(MKL_LIBS ${IOMP5_LIBRARY} ${MKL_LIBRARY_THREAD}  ${MKL_LIBRARY_LP64} ${MKL_LIBRARY} ${OPENMP_LIB})
+set(MKL_LIBS ${IOMP5_LIBRARY} ${MKL_LIBRARY_THREAD}  ${MKL_LIBRARY_ILP64} ${MKL_LIBRARY} ${OPENMP_LIB})
+message(${MKL_LIBS})
 add_definitions(-DUSE_MKL)
 add_definitions(-DEIGEN_USE_MKL_ALL)
 
@@ -83,7 +84,7 @@ if ( BUILD_TOOLS OR BUILD_DEMO )
 	    # it is not in the default /usr/local prefix.
 	    list(APPEND CMAKE_PREFIX_PATH "/usr/local/opt/qt5")
     endif()
-    find_package(Qt5 COMPONENTS Core Widgets Xml OpenGL Multimedia)
+    find_package(Qt5 COMPONENTS Core Widgets Xml OpenGL Multimedia Audio)
     find_package(QGLViewer REQUIRED)
 endif ()
 

@@ -11,18 +11,18 @@ IF (QGLVIEWER_ROOT)
 ELSE (QGLVIEWER_ROOT)                                                                                             
   FIND_PATH(QGLVIEWER_INCLUDE_DIR qglviewer.h                                                                   
         HINTS                                                                                                     
-        PATHS "/usr/local/include/QGLViewer"
-            PATHS "/usr/local/Cellar/libqglviewer/2.7.1/lib/QGLViewer.framework/Versions/Current/Headers/"
+            PATHS "/usr/local/include/QGLViewer"
+            PATHS "/usr/include/QGLViewer"
             PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/Headers/"
             PATHS "/usr/include/QGLViewer/"
             PATHS ${SYSTEM_INC_PATH}                             
             PATHS $ENV{INCLUDE}
             )
     FIND_LIBRARY(QGLVIEWER_LIBRARY QGLViewer                                                                      
-            PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/"
-            PATHS "/usr/local/Cellar/libqglviewer/2.7.1/lib/QGLViewer.framework/Versions/Current/"
-            PATHS ${SYSTEM_LIB_PATH}                                                                              
             PATHS "/usr/local/lib/"
+            PATHS "/usr/lib/"
+            PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/"
+            PATHS ${SYSTEM_LIB_PATH}                                                                              
             PATHS $ENV{LD_LIBRARY_PATH}
             )
 ENDIF (QGLVIEWER_ROOT)                                                                                            
