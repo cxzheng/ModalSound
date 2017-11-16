@@ -16,6 +16,7 @@ endif ()
 #  set(CMAKE_AUTORCC ON)
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ../protobuf/sploosh.proto)
+message("QGLGLGLGLG: ${QGLVIEWER_LIBRARY}")
 
 add_exe(click_synth
     ClickSoundSynth.cpp
@@ -29,13 +30,13 @@ add_exe(click_synth
     ../generic/precision_type.hpp
     ../generic/precision_type.cpp
     ${PROTO_HDRS}   ${PROTO_SRCS}
-    LINK_LIBRARIES  ${QGLVIEWER_LIBRARY}
-                    ${GLUT_LIBRARIES}   
+    LINK_LIBRARIES  ${GLUT_LIBRARIES}   
                     ${OPENGL_LIBRARIES}
                     Qt5::Core   Qt5::Widgets
                     Qt5::Xml    Qt5::OpenGL
                     Qt5::Multimedia
                     ${MKL_LIBS}
+                    ${QGLVIEWER_LIBRARY}
                     ${PROTOBUF_LIBRARY}
                     ${Boost_FILESYSTEM_LIBRARY} 
                     ${Boost_SYSTEM_LIBRARY}

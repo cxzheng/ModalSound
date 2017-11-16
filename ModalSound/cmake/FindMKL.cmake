@@ -3,6 +3,7 @@ find_path(MKL_INCLUDE_DIR mkl.h
     PATHS ENV INCLUDE
     PATHS ${SYSTEM_INC_PATH}
     PATHS $ENV{MKLROOT}/include
+     /opt/intel/mkl/include
 )
 
 find_library(MKL_LIBRARY mkl_core
@@ -10,6 +11,21 @@ find_library(MKL_LIBRARY mkl_core
     PATHS ${SYSTEM_LIB_PATH}
     PATHS ENV LIBRARY_PATH
     PATHS $ENV{MKLROOT}/lib
+    /opt/intel/mkl/lib/intel64
+)
+find_library(MKL_LIBRARY_THREAD  mkl_intel_thread
+    PATHS ENV LD_LIBRARY_PATH
+    PATHS ${SYSTEM_LIB_PATH}
+    PATHS ENV LIBRARY_PATH
+    PATHS $ENV{MKLROOT}/lib
+    /opt/intel/mkl/lib/intel64
+)
+find_library(MKL_LIBRARY_LP64 mkl_intel_lp64 
+    PATHS ENV LD_LIBRARY_PATH
+    PATHS ${SYSTEM_LIB_PATH}
+    PATHS ENV LIBRARY_PATH
+    PATHS $ENV{MKLROOT}/lib
+    /opt/intel/mkl/lib/intel64
 )
 
 set(_IOMP5_LIB iomp5)
@@ -27,6 +43,7 @@ find_library(IOMP5_LIBRARY
     PATHS ${SYSTEM_LIB_PATH}
     PATHS ENV LIBRARY_PATH
     DOC "Path to OpenMP runtime library"
+    /opt/intel/lib/intel64
 )
 
 if (MKL_INCLUDE_DIR AND MKL_LIBRARY)
