@@ -1,5 +1,6 @@
 include_directories(
     ${GLUT_INCLUDE_DIR}
+    ${Eigen_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${Boost_INCLUDE_DIR})
 

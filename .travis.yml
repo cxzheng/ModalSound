@@ -61,7 +61,7 @@ before_install:
   # Workaround for weird Python binary in the latest Travis CI update
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=/usr/bin/:$PATH ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qt5-default libqglviewer-dev  mesa-utils  libxmu-dev libxi-dev libconfig++-dev libgsl0ldbl libgsl0-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qt5-default libqglviewer-dev  mesa-utils  libeigen3-dev  libxmu-dev libxi-dev libconfig++-dev libgsl0ldbl libgsl0-dev; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew outdated cmake || brew upgrade cmake ; fi
   # only for debuging

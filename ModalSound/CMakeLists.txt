@@ -56,6 +56,13 @@ find_package(Boost 1.50 REQUIRED
 # GSL
 find_package(GSL REQUIRED)
 
+# Eigen
+find_package(Eigen REQUIRED)
+
+if (EIGEN_FOUND)
+  message("-- Found Eigen version ${EIGEN_VERSION}: ${Eigen_INCLUDE_DIR}")
+endif (EIGEN_FOUND)
+
 include(sploosh_external)
 
 #===================================================================
