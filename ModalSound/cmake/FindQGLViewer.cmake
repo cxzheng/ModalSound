@@ -19,17 +19,31 @@ ELSE (QGLVIEWER_ROOT)
             PATHS $ENV{INCLUDE}
             )
     FIND_LIBRARY(QGLVIEWER_LIBRARY QGLViewer-qt5                                                                     
+      HINTS
             PATHS "/usr/local/lib/"
             PATHS "/usr/lib/"
             PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/"
             PATHS ${SYSTEM_LIB_PATH}                                                                              
             PATHS $ENV{LD_LIBRARY_PATH}
             )
+    if (QGLVIEWER_LIBRARY)
+      message("QGLViewer library: ${QGLVIEWER_LIBRARY}")
+    else (QGLVIEWER_LIBRARY)
+      FIND_LIBRARY(QGLVIEWER_LIBRARY QGLViewer 
+        HINTS
+              PATHS "/usr/local/lib/"
+              PATHS "/usr/lib/"
+              PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/"
+              PATHS ${SYSTEM_LIB_PATH}                                                                       
+              PATHS $ENV{LD_LIBRARY_PATH}
+              )
+          endif(QGLVIEWER_LIBRARY)
+
+
 ENDIF (QGLVIEWER_ROOT)                                                                                            
                                                                                                                   
 MARK_AS_ADVANCED(QGLVIEWER_INCLUDE_DIR QGLVIEWER_LIBRARY)                                                         
 message("QGLViewer include: ${QGLVIEWER_INCLUDE_DIR}")
-message("QGLViewer library: ${QGLVIEWER_LIBRARY}")
                                                                                                                   
 INCLUDE(FindPackageHandleStandardArgs)                                                                            
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(QGLViewer DEFAULT_MSG                                                           
