@@ -36,7 +36,7 @@ matrix:
         - chmod 755 get_eigen.sh
         - ./get_eigen.sh
         - chmod 755 get_libqglviewer.sh
-        - ./get_qglviewer.sh
+        - ./get_libqglviewer.sh
         - mkdir build
         - cd build
         - CC=$CC_COMPILER CXX=$CXX_COMPILER cmake ..
