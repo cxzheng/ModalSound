@@ -1,7 +1,7 @@
 #include "AudioProducer.h"
 #include <QtEndian>
 #include <fstream>
-#include "protobuf/sploosh.pb.h"
+#include "sploosh.pb.h"
 #include "utils/term_msg.h"
 #include "utils/macros.h"
 #include "transfer/FMMTransferEval.h"

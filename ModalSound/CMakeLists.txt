@@ -82,6 +82,7 @@ if ( BUILD_TOOLS OR BUILD_DEMO )
     find_package(GLUT REQUIRED)
     find_package(OpenGL REQUIRED)
 
+
     # check the existence of libQGLViewer
     if(APPLE AND EXISTS /usr/local/opt/qt5)
 	    # Homebrew installs Qt5 (up to at least 5.9.1) in

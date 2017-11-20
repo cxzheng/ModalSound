@@ -18,7 +18,7 @@ ELSE (QGLVIEWER_ROOT)
             PATHS ${SYSTEM_INC_PATH}                             
             PATHS $ENV{INCLUDE}
             )
-    FIND_LIBRARY(QGLVIEWER_LIBRARY QGLViewer                                                                      
+    FIND_LIBRARY(QGLVIEWER_LIBRARY QGLViewer-qt5                                                                     
             PATHS "/usr/local/lib/"
             PATHS "/usr/lib/"
             PATHS "/usr/local/lib/QGLViewer.framework/Versions/Current/"

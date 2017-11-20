@@ -16,6 +16,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTORCC ON)
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ../protobuf/sploosh.proto)
+
+include_directories(
+  ${CMAKE_INCLUDE_CURRENT_DIR}
+  )
+
 message("QGLGLGLGLG: ${QGLVIEWER_LIBRARY}")
 
 add_exe(click_synth
@@ -32,6 +37,11 @@ add_exe(click_synth
     ${PROTO_HDRS}   ${PROTO_SRCS}
     LINK_LIBRARIES  ${GLUT_LIBRARIES}   
                     ${OPENGL_LIBRARIES}
+                    ${GLUT_glut_LIBRARY}
+                    ${GLUT_Xi_LIBRARY}
+                    ${GLUT_Xmu_LIBRARY}
+                    ${OPENGL_glu_LIBRARY}
+                    ${OPENGL_gl_LIBRARY}
                     Qt5::Core   Qt5::Widgets
                     Qt5::Xml    Qt5::OpenGL
                     Qt5::Multimedia
@@ -41,5 +51,6 @@ add_exe(click_synth
                     ${Boost_FILESYSTEM_LIBRARY} 
                     ${Boost_SYSTEM_LIBRARY}
                     ${GSL_LIBRARIES}
+    -glu
     OUT_DIR ${BIN_DIR}
 )

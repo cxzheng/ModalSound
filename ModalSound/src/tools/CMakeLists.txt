@@ -10,6 +10,7 @@ endif ()
 # Find includes in corresponding build directorilib/cmakeCMAKE_INCLUDE_CURRENT_DIR ON)
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
 # =================== TETVIEWER ==================
 # the qrc files

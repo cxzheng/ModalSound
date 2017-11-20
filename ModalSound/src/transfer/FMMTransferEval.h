@@ -6,7 +6,7 @@
 #include "sc/Matrix.hpp"
 #include "sc/SphericalFunc.hpp"
 #include "HelmholtzBasis.hpp"
-#include "protobuf/sploosh.pb.h"
+#include "sploosh.pb.h"
 #include "config.h"
 
 class FMMTransferEval
