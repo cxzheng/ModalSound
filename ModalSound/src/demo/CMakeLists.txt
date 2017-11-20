@@ -10,10 +10,10 @@ if ( NOT QGLVIEWER_FRAMEWORK )
     include_directories(${QGLVIEWER_INCLUDE_DIR})
 endif ()
 
-#  # Find includes in corresponding build directories
-#  set(CMAKE_INCLUDE_CURRENT_DIR ON)
-#  # Instruct CMake to run moc automatically when needed.
-#  set(CMAKE_AUTORCC ON)
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTORCC ON)
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ../protobuf/sploosh.proto)
 message("QGLGLGLGLG: ${QGLVIEWER_LIBRARY}")

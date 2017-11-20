@@ -13,6 +13,15 @@ find_library(MKL_LIBRARY mkl_core
     PATHS $ENV{MKLROOT}/lib
     /opt/intel/mkl/lib/intel64
 )
+
+find_library(MKL_LIBRARY_RT mkl_rt
+    PATHS ENV LD_LIBRARY_PATH
+    PATHS ${SYSTEM_LIB_PATH}
+    PATHS ENV LIBRARY_PATH
+    PATHS $ENV{MKLROOT}/lib
+    /opt/intel/mkl/lib/intel64
+)
+
 find_library(MKL_LIBRARY_SEQ  mkl_intel_sequential
     PATHS ENV LD_LIBRARY_PATH
     PATHS ${SYSTEM_LIB_PATH}

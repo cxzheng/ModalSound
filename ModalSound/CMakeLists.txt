@@ -9,6 +9,8 @@ cmake_minimum_required(VERSION 3.0)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(UpdateCacheVariable)
 
+list(APPEND CMAKE_PREFIX_PATH "/home/dli/Qt5.7.0/5.7/gcc_64/lib/cmake")
+
 # compile option
 option(BUILD_DEBUG "Turn on the debug mode" OFF)
 option(BUILD_TOOLS "Build tools" ON)
@@ -44,10 +46,13 @@ find_package(Threads 1.0 REQUIRED)
 
 # check Intel MKL
 find_package(MKL REQUIRED)
-set(MKL_LIBS ${IOMP5_LIBRARY} ${MKL_LIBRARY_THREAD}  ${MKL_LIBRARY_ILP64} ${MKL_LIBRARY} ${OPENMP_LIB})
+set(MKL_LIBS ${IOMP5_LIBRARY} ${MKL_LIBRARY_RT} ${MKL_LIBRARY_THREAD}  ${MKL_LIBRARY_ILP64} ${MKL_LIBRARY} ${OPENMP_LIB})
 message(${MKL_LIBS})
 add_definitions(-DUSE_MKL)
 add_definitions(-DEIGEN_USE_MKL_ALL)
+add_definitions(-Wl,--no-as-needed)
+add_definitions(-lpthread)
+add_definitions(-lm)
 
 # Boost
 set(Boost_ADDITIONAL_VERSIONS "1.51" "1.51.0")
@@ -84,7 +89,7 @@ if ( BUILD_TOOLS OR BUILD_DEMO )
 	    # it is not in the default /usr/local prefix.
 	    list(APPEND CMAKE_PREFIX_PATH "/usr/local/opt/qt5")
     endif()
-    find_package(Qt5 COMPONENTS Core Widgets Xml OpenGL Multimedia Audio)
+    find_package(Qt5 COMPONENTS Core Widgets Xml OpenGL Multimedia)
     find_package(QGLViewer REQUIRED)
 endif ()
 
