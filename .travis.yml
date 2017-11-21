@@ -56,7 +56,7 @@ matrix:
 before_install:
   # Workaround for weird Python binary in the latest Travis CI update
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=/usr/bin/:$PATH ; fi
-    #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y cmake cmake-data git libqglviewer-dev-qt5 libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl0ldbl protobuf-compiler libgsl0-dev; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew outdated cmake || brew upgrade cmake ; fi
