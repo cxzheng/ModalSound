@@ -1,4 +1,6 @@
-# ModalSound
+# ModalSound 
+[![Build Status](https://travis-ci.com/dingzeyuli/testModalSound.svg?token=cipn7FBcNyG2kNqwXKM2&branch=master)](https://travis-ci.com/dingzeyuli/testModalSound)
+
 This project releases the educational C++ code used at SIGGRAPH 2016 Course "Physically Based Sound for Computer Animation and Virtual Environments".
 
 There are two sub-projects, _IsoStuffer_ and _ModalSound_.
