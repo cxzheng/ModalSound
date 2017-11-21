@@ -31,7 +31,7 @@ matrix:
         - mkdir build
         - cd build
         - CC=$CC_COMPILER CXX=$CXX_COMPILER cmake ..
-        - make -j 2
+        - make 
         - cd ../../IsoStuffer
         - mkdir build
         - cd build
