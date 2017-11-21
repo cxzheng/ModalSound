@@ -5,7 +5,7 @@ matrix:
   include:
     # Linux and GCC
     - os: linux
-      dist: trusty
+      dist: xenial
       addons:
         apt:
           sources:
@@ -35,8 +35,8 @@ matrix:
         - cd ../../ModalSound/
         - chmod 755 get_eigen.sh
         - ./get_eigen.sh
-        - chmod 755 get_libqglviewer.sh
-        - ./get_libqglviewer.sh
+        #- chmod 755 get_libqglviewer.sh
+        #- ./get_libqglviewer.sh
         - mkdir build
         - cd build
         - CC=$CC_COMPILER CXX=$CXX_COMPILER cmake ..
@@ -57,7 +57,7 @@ before_install:
   # Workaround for weird Python binary in the latest Travis CI update
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=/usr/bin/:$PATH ; fi
     #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y cmake cmake-data git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl0ldbl protobuf-compiler libgsl0-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y cmake cmake-data git libqglviewer-dev-qt5 libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl0ldbl protobuf-compiler libgsl0-dev; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew outdated cmake || brew upgrade cmake ; fi
   # only for debuging
