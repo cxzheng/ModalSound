@@ -23,8 +23,15 @@ matrix:
         - chmod 755 get_eigen.sh
         - ./get_eigen.sh
         - sudo apt-get install -y gcc-6 g++-6
-        - sudo apt-get install -y cmake cmake-data git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler 
+        - sudo apt-get install -y git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler 
         - sudo apt-get install intel-mkl-64bit-2017.4-061
+        - version=3.9.6
+        - wget https://cmake.org/files/v3.9/cmake-$version.tar.gz
+        - tar -xzvf cmake-$version.tar.gz
+        - cd cmake-$version/
+        - ./bootstrap
+        - make -j4
+        - sudo make install
         - cmake --version
         - source /opt/intel/mkl/bin/mklvars.sh intel64
         - source /opt/intel/bin/compilervars.sh intel64

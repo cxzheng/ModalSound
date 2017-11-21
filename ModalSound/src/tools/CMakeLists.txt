@@ -15,6 +15,10 @@ include_directories(
     ${AUTOGEN_BUILD_DIR}
     ${Boost_INCLUDE_DIR})
 
+  set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+message("${AUTOGEN_BUILD_DIR}")
+
 # =================== TETVIEWER ==================
 # the qrc files
 set(TETVIEWER_QRC_SRCS images.qrc)
