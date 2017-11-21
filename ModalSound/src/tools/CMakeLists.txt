@@ -1,7 +1,3 @@
-include_directories(
-    ${GLUT_INCLUDE_DIR}
-    ${OPENGL_INCLUDE_DIR}
-    ${Boost_INCLUDE_DIR})
 
 if ( NOT QGLVIEWER_FRAMEWORK )
     include_directories(${QGLVIEWER_INCLUDE_DIR})
@@ -11,6 +7,13 @@ endif ()
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
+
+include_directories(
+    ${GLUT_INCLUDE_DIR}
+    ${OPENGL_INCLUDE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${AUTOGEN_BUILD_DIR}
+    ${Boost_INCLUDE_DIR})
 
 # =================== TETVIEWER ==================
 # the qrc files
