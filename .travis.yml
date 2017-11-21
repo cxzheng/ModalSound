@@ -6,17 +6,15 @@ matrix:
     # Linux and GCC
     - os: linux
       dist: xenial
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-6
-            - g++-6
       env:
         - CC_COMPILER=gcc-6
         - CXX_COMPILER=g++-6
       script:
+        - export PATH=/usr/bin/:$PATH 
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+        - sudo apt-get update
+        - sudo apt-get install gcc-6 g++-6
+        - sudo apt-get install -y cmake cmake-data git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler libgsl0-dev gcc-6-base
         - cmake --version
         - wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
         - sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
@@ -53,16 +51,3 @@ matrix:
       #         - cmake ..
       #         - make -j 2
 
-before_install:
-  # Workaround for weird Python binary in the latest Travis CI update
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=/usr/bin/:$PATH ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y cmake cmake-data git libqglviewer-dev-qt5 libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl0ldbl protobuf-compiler libgsl0-dev; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update > /dev/null ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew outdated cmake || brew upgrade cmake ; fi
-  # only for debuging
-  # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install cmake vim git; fi
-  # it appears that boost has been installed, with at least version 1.61, so
-  # a pretty new version.
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install eigen glog gflags libconfig; fi
-    
