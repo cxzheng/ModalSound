@@ -27,11 +27,12 @@ matrix:
         - sudo apt-get install intel-mkl-64bit-2017.4-061
         - version=3.9.6
         - wget https://cmake.org/files/v3.9/cmake-$version.tar.gz
-        - tar -xzvf cmake-$version.tar.gz
+        - tar -xzvf cmake-$version.tar.gz 1> /dev/null
         - cd cmake-$version/
-        - ./bootstrap
-        - make -j4
+        - ./bootstrap 1> /dev/null
+        - make -j4 1>/dev/null
         - sudo make install
+        - cd ..
         - cmake --version
         - source /opt/intel/mkl/bin/mklvars.sh intel64
         - source /opt/intel/bin/compilervars.sh intel64
