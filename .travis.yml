@@ -11,9 +11,9 @@ matrix:
         - CXX_COMPILER=g++-6
       script:
         - export PATH=/usr/bin/:$PATH 
-        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update
-        - sudo apt-get install gcc-6 g++-6
+        - sudo apt-get install -y gcc-6 g++-6
         - sudo apt-get install -y cmake cmake-data git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler 
         - cmake --version
         - wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
