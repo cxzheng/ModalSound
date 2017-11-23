@@ -51,6 +51,5 @@ add_exe(click_synth
                     ${Boost_FILESYSTEM_LIBRARY} 
                     ${Boost_SYSTEM_LIBRARY}
                     ${GSL_LIBRARIES}
-    -glu
     OUT_DIR ${BIN_DIR}
 )
