@@ -22,6 +22,9 @@ matrix:
         - cd ModalSound
         - chmod 755 get_eigen.sh
         - ./get_eigen.sh
+        - sudo rm /var/lib/apt/lists/lock
+        - sudo rm /var/cache/apt/archives/lock
+        - sudo rm /var/lib/dpkg/lock
         - sudo apt-get install -y gcc-6 g++-6
         - sudo apt-get install -y git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler 
         - sudo apt-get install intel-mkl-64bit-2017.4-061
