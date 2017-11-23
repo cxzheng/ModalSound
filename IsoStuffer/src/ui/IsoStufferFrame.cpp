@@ -143,7 +143,7 @@ void IsoStufferFrame::reset()
 void IsoStufferFrame::load_mesh()
 {
     QString file = QFileDialog::getOpenFileName(this,
-            "Select the triangle mesh file", ".",
+            "Select the triangle mesh file", "",
             "Obj file (*.obj);;All file (*)");
 
     if ( file.isEmpty() ) return;
