@@ -59,7 +59,7 @@ void IsoStufferCanvas::keyPressEvent(QKeyEvent* e)
 void IsoStufferCanvas::switch_facet_disp()
 {
     facet_ = !facet_;
-    updateGL();
+    update();
 }
 
 void IsoStufferCanvas::switch_wireframe()
@@ -69,7 +69,7 @@ void IsoStufferCanvas::switch_wireframe()
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     else
         glPolygonMode(GL_FRONT, GL_FILL);
-    updateGL();
+    update();
 }
 
 void IsoStufferCanvas::draw()

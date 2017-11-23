@@ -50,7 +50,7 @@ void IsoStufferFrame::convert_to_tetmesh()
     pstuffer_->create_mesh(pmesh_);
     pmesh_->update_surface();
     curStep_ = 6;
-    canvas->updateGL();
+    canvas->update();
 }
 
 void IsoStufferFrame::next_step()
@@ -71,7 +71,7 @@ void IsoStufferFrame::next_step()
 
             pstuffer_->create_boundary_octants();
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 1: // create octree
             pstuffer_->create_octree();
@@ -82,7 +82,7 @@ void IsoStufferFrame::next_step()
             //std::cerr << "CHECK CHILDREN MASK ... II" << std::endl;
             //pstuffer_->oct_tree().check_children_mask();
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 2: // weak balance
             pstuffer_->weak_balance();
@@ -90,7 +90,7 @@ void IsoStufferFrame::next_step()
             pstuffer_->oct_tree().check_children_mask();
             pstuffer_->update_bitmasks();
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 3:
             pstuffer_->create_background_tets();
@@ -102,13 +102,13 @@ void IsoStufferFrame::next_step()
             pmesh_->update_surface();
 
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 4:
             pstuffer_->compute_cutting_pts();
             pstuffer_->wrap_violated_pts();
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 5:
             printf("INFO: extract final tets...\n");
@@ -120,7 +120,7 @@ void IsoStufferFrame::next_step()
             pmesh_->update_surface();
 
             ++ curStep_;
-            canvas->updateGL();
+            canvas->update();
             return;
         case 6:
             return;

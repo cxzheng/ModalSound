@@ -7,6 +7,7 @@ cmake_minimum_required(VERSION 2.6)
 
 # General Configuration: find all the required libraries.
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_PREFIX_PATH "/home/dli/Qt5.7.0/5.7/gcc_64/lib/cmake")
 
 # compile option
 option(USE_DEBUG "Turn on the debug mode" OFF)
