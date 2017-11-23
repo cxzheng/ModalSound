@@ -1,5 +1,5 @@
 # ModalSound 
-[![Build Status](https://travis-ci.com/dingzeyuli/testModalSound.svg?token=cipn7FBcNyG2kNqwXKM2&branch=master)](https://travis-ci.com/dingzeyuli/testModalSound)
+[![Build Status](https://travis-ci.org/dingzeyuli/ModalSound.svg?branch=master)](https://travis-ci.org/dingzeyuli/ModalSound)
 
 This project releases the educational C++ code used at SIGGRAPH 2016 Course "Physically Based Sound for Computer Animation and Virtual Environments".
 
