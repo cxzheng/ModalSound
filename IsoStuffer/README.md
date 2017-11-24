@@ -79,8 +79,6 @@ With GUI:
 
 For macOS, I use homebrew to download most of the required packages. If certain packages are missing from brew, install them from source code. As for other Linux distros, similar steps follow.
 
-On macOS, I have experienced dynamic linking issues and 
-> A Framework is created by default. Uncomment a line in QGLViewer.pro if you want to create a .dylib instead. 
 
 
 ### Windows
@@ -93,4 +91,4 @@ I've prepared an automatic continuous integration script for [Travis CI](https:/
 
 ## Issues
 
-If you run into problems during compiling or running, please submit an [issue](https://github.com/cxzheng/ModalSound/issues) or contact [Dingzeyu Li](http://dingzeyu.li) / [Changxi Zheng](http://www.cs.columbia.edu/~cxz/).
+If you run into problems during compiling or running, please checkout [the common issues page](../Issues.md). 

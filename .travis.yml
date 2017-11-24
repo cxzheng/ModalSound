@@ -27,7 +27,7 @@ matrix:
         - sudo rm /var/lib/dpkg/lock
         - sudo apt-get install -y gcc-6 g++-6
         - sudo apt-get install -y git libboost-all-dev xorg-dev libglu1-mesa-dev libgoogle-glog-dev freeglut3-dev qtmultimedia5-dev  qt5-default mesa-utils libqglviewer-dev  libxmu-dev libxi-dev libconfig++-dev libprotobuf-dev libgsl-dev protobuf-compiler 
-        - sudo apt-get install intel-mkl-64bit-2017.4-061
+        - sudo apt-get install -y intel-mkl-64bit-2017.4-061
         - version=3.9.6
         - wget https://cmake.org/files/v3.9/cmake-$version.tar.gz
         - tar -xzvf cmake-$version.tar.gz 1> /dev/null
