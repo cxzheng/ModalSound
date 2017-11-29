@@ -20,7 +20,7 @@
   Referenced from: something_target
   Reason: image not found
   ```
-  **Solution**: In my case, this error is caused by the fact that certain Framework (not regular *.dylib, but Framework) is not in the DYLD_LIBRARY_PATH variable. There are two ways to fix:
+  **Solution**: In my case, this error is caused by the fact that certain Framework (not regular *.dylib, but Framework) is not in the DYLD_LIBRARY_PATH variable. There are two ways to fix (I use the second one):
 
   a) change the DYLD_LIBRARY_PATH to include the path.
   ```bash
@@ -36,7 +36,7 @@
 
 - ```fatal error: ui_tetviewer.h: No such file or directory```
 
-  **Solution**: Something went wrong in the cmake process. The corresponding ui_*.h files are supposed to be generated during cmake process. Try using cmake v3.9.6 to see if the problem goes away. If not, another dirty fix is to manually call ```uic``` to generate all the necessary files; also you might need to move the manually generated ui_*.h files to the right folder. 
+  **Solution**: Something went wrong in the cmake process. The corresponding ui_\*.h files are supposed to be generated during cmake process. Try using cmake v3.9.6 to see if the problem goes away. If not, another dirty fix is to manually call ```uic``` to generate all the necessary files; also you might need to move the manually generated ui_*.h files to the right folder. 
 
 
 - What do these lines in .travis.xml do? They seem unsafe.
@@ -53,4 +53,4 @@
   ```
 
 
-- If you made all this far and still could not find a solution, feel free to contact [Dingzeyu Li](http://dingzeyu.li/) for help. I've spent a lot of time on compiling this piece code, hopefully I have some wisdom to share.
+- If you made all this far and still could not find a solution, feel free to contact [Dingzeyu Li](http://dingzeyu.li/) for help. I've spent a lot of time on compiling this piece of code, hopefully I have some wisdom to share.
