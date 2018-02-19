@@ -107,13 +107,13 @@ void TetViewerFrame::modes_params()
 void TetViewerFrame::set_mode_sel(int mId)
 {
     modeSel_ = mId;
-    canvas->updateGL();
+    canvas->update();
 }
 
 void TetViewerFrame::mode_scale_changed(double s)
 {
     modeScale_ = s;
-    canvas->updateGL();
+    canvas->update();
 }
 
 /*

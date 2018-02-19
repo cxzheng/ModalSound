@@ -3,7 +3,7 @@
 #include <boost/filesystem.hpp>
 #include "utils/term_msg.h"
 #include "utils/macros.h"
-#include "protobuf/sploosh.pb.h"
+#include "sploosh.pb.h"
 #include "io/MatrixIO.hpp"
 
 using namespace std;

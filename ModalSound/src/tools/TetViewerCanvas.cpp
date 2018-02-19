@@ -81,12 +81,12 @@ void TetViewerCanvas::init_gl()
 void TetViewerCanvas::toggle_wireframe(bool wf)
 {
     wireframe_ = wf;
-    updateGL();
+    update();
 }
 void TetViewerCanvas::toggle_show_info(bool si)
 {
     showMshInfo_ = si;
-    updateGL();
+    update();
 }
 
 void TetViewerCanvas::dump_mode_colormap(const char* fname)

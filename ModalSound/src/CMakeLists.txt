@@ -6,6 +6,7 @@ set(SC_SRC
     sc/Quaternion.hpp   sc/Quaternion.cpp)
 
 include_directories(
+    ${Eigen_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${MKL_INCLUDE_DIR})

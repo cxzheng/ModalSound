@@ -1,5 +1,5 @@
 include_directories(
-    ${EIGEN_INCLUDE_DIR}
+    ${Eigen_INCLUDE_DIR}
     ${PYTHON_INCLUDE_DIR}
     ${Boost_INCLUDE_DIR})
 
